@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.com">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -7,8 +7,8 @@
 <link rel="stylesheet" th:href="@{/css/displaySongs.css}">
 
 </head>
-
 <body>
+	
 	<table border="1" class="song-table">
 		<thead>
 			<tr>
@@ -16,12 +16,12 @@
 				<th class="artist">Artist</th>
 				<th class="gener">Genre</th>
 				<th>Play</th>
-				<th>Add to fovourite</th>
+				<th>Remove from fovourite</th>
 			</tr>
 		<thead/>
 		
 		<tbody>
-			<tr th:each="song:${songs}">
+			<tr th:each="song:${favoriteSongs}">
 				<td th:text="${song.name}"></td>
 				<td th:text="${song.artist}"></td>
 				<td th:text="${song.gener}"></td>
@@ -33,12 +33,13 @@
 				
 				 <td>
                     <!-- Button to add song to favorites -->
-                    <form th:action="@{/addFavorite/{id}(id=${song.id})}" method="get">
-                        <button type="submit" class="favouriteButton">Add to Favorites</button>
+                    <form th:action="@{/removeFavorite/{id}(id=${song.id})}" method="get">
+                        <button type="submit" class="favouriteButton">Remove from Favorites</button>
                     </form>
                 </td>
 			</tr>
 		</tbody>
 	</table>
+	
 </body>
 </html>

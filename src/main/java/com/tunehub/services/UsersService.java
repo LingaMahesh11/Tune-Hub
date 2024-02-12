@@ -12,7 +12,11 @@ public interface UsersService {
 	
 	public String getRole(String email);
 	
+	public String getUsername(String email);
+	
 	public Users getUser(String email);
 	
 	public void updateUser(Users user);
+	
+	public void removeFavoriteSong(int userId, int songId);
 }

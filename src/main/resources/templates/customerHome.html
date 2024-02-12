@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://thymeleaf.com">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel ="stylesheet" th:href="@{/css/customerHome.css}">
+
 </head>
 <body>
-	<h1>Customer home</h1>
+
 	
-	<a href ="pay">Get Premium</a>
+	<div th:unless="${isPremium}" class="non-premium">
+		<a href ="pay">Get Premium</a>
+		<br>	
+		<a href="logout">LOGOUT</a>
+	</div>
 	
-	<br>
+	<div th:if="${isPremium}" class="premium">
 	
-	<a href="logout">LOGOUT</a>
+		<div class="profile-section">
+        <img th:src="@{/images/man.png}" alt="Profile Picture">
+        
+	    </div>
+	
+		<div class="top-navigation">
+	        
+	        <a href="logout">Logout</a>
+	    </div>
+	
+		<h1 th:text="'Welcome, ' + ${username} + '...!'">Welcome...!</h1>
+		
+		 <div class="search-bar">
+	        <input type="text" placeholder="Search...">
+	        <img th:src="@{/images/glass.png}" alt="Binoculars">
+	    </div>
+	
+		<div class="section play-songs-section">
+        <a href="viewSongs">Play Songs</a>
+	    </div>
+	
+	    <div class="section playlists-section">
+	        <a href="viewPlaylists">Playlists</a>
+	    </div>
+	    
+	    <div class="section favorites-section">
+        <a href="/favorites">View Favorite Songs</a>
+   		 </div>
+	
+	</div>
 </body>
 </html>

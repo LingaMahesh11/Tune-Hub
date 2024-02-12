@@ -1,0 +1,89 @@
+/* displaySongs.css */
+
+@charset "ISO-8859-1";
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #3494E6, #EC6EAD);
+    padding: 20px;
+}
+
+.song-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff; /* Set a white background color for the table */
+}
+
+.song-table th, .song-table td {
+    border: 0.5px solid #4caf50; /* Set thicker black borders */
+    padding: 8px;
+    text-align: left;
+}
+
+.song-table th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.song-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2 !important; /* Add !important to ensure specificity */
+}
+
+.song-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+audio {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Set a specific width for the play controls column */
+.song-table td:last-child {
+    width: 20%;
+}
+
+.song-table td:nth-last-child(2) {
+    width: 15%; /* Adjust width as needed */
+}
+
+/* Style the button */
+.song-table td:nth-last-child(2) button {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect */
+.song-table td:nth-last-child(2) button:hover {
+    background-color: #0056b3;
+}
+
+.song-table td:nth-last-child(2) {
+    width: 15%; /* Adjust width as needed */
+}
+
+/* Style the button */
+.favouriteButton{
+    padding: 8px 16px; /* Add padding to the button */
+    background-color: #4CAF50; /* Green background color */
+    border: none; /* Remove button border */
+    color: white; /* White text color */
+    text-align: center; /* Center align text */
+    text-decoration: none; /* Remove default underline */
+    margin-left:30px;
+    cursor: pointer; /* Add cursor pointer on hover */
+    border-radius: 4px; /* Add border radius */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    align-items: center;
+}
+
+/* Change button background color on hover */
+.song-table td:nth-last-child(2) button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}

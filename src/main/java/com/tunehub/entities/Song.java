@@ -21,12 +21,16 @@ public class Song {
 	
 	@ManyToMany
 	List<Playlist> playlists;
+	
+	@ManyToMany(mappedBy = "favoriteSongs")
+    private List<Users> favoritedByUsers;
 
 	public Song() {
 		super();
 	}
 
-	public Song(int id, String name, String artist, String gener, String link, List<Playlist> playlists) {
+	public Song(int id, String name, String artist, String gener, String link, List<Playlist> playlists,
+			List<Users> favoritedByUsers) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -34,6 +38,7 @@ public class Song {
 		this.gener = gener;
 		this.link = link;
 		this.playlists = playlists;
+		this.favoritedByUsers = favoritedByUsers;
 	}
 
 	public int getId() {
@@ -84,11 +89,21 @@ public class Song {
 		this.playlists = playlists;
 	}
 
+	public List<Users> getFavoritedByUsers() {
+		return favoritedByUsers;
+	}
+
+	public void setFavoritedByUsers(List<Users> favoritedByUsers) {
+		this.favoritedByUsers = favoritedByUsers;
+	}
+
 	@Override
 	public String toString() {
 		return "Song [id=" + id + ", name=" + name + ", artist=" + artist + ", gener=" + gener + ", link=" + link
-				+ ", playlists="  + "]";
+				+ ", playlists=" + playlists + ", favoritedByUsers=" + favoritedByUsers + "]";
 	}
+
+	
 	
 	
 }

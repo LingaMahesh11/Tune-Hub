@@ -1,8 +1,8 @@
-/* login.css */
+/* registration.css */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #3494E6, #EC6EAD); /* Gradient Background */
+    background: linear-gradient(135deg, #3494E6, #EC6EAD);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,32 +11,43 @@ body {
     height: 100vh;
 }
 
-form {
+#div {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
     width: 300px; /* Adjust the width as needed */
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: #333;
-    
+    font-weight: bold;
 }
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
     width: 100%;
+    max-width: 100%; /* Set maximum width to 100% */
     padding: 10px;
     margin-bottom: 16px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    
 }
 
-.button {
+input[type="radio"] {
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+input[type="submit"] {
     background: linear-gradient(45deg, #2196F3, #4CAF50);
     color: white;
     padding: 12px 20px;
@@ -45,9 +56,10 @@ input {
     cursor: pointer;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 100px;
 }
 
-.button:hover {
+input[type="submit"]:hover {
     background: linear-gradient(45deg, #1976D2, #388E3C);
     transform: scale(1.1);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);

@@ -1,0 +1,154 @@
+/* customerHome.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #3498db, #a9cce3);
+    color: #fff;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/man.png') repeat;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.profile-section {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.top-navigation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.top-navigation a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #2ecc71, #3498db);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.top-navigation a:hover {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.search-bar {
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 16px;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s; /* Adding transition property */
+}
+
+.search-bar img:hover {
+    transform: scale(1.2); /* Increasing the size on hover */
+}
+
+.section {
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.section a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section.play-songs-section {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+.section.playlists-section {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.section a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.non-premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.non-premium a {
+    width: 120px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e67e22;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.non-premium a:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+    color: #fff;
+}

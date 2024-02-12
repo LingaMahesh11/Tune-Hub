@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed 'height' to 'min-height' to prevent overflow */
+    background: linear-gradient(135deg, #3494E6, #EC6EAD);
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 2px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+}
+
+/* Top Section Styles */
+.header {
+    background: none; /* Specify the background for the top section */
+    padding: 20px;
+}
+
+/* Make playlist names bold and increase font size */
+td {
+    font-weight: bold;
+}
+
+/* Increase font size only for playlist names */
+td:first-child {
+    font-size: 18px;
+}

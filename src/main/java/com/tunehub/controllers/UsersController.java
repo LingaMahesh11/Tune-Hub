@@ -2,6 +2,7 @@ package com.tunehub.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,12 +33,12 @@ public class UsersController {
 			System.out.println("User already exists");
 		}
 		
-		return "home";
+		return "index";
 	}
 	
 	//Redirecting the user as per their role (Admin or Customer)
 	@PostMapping("/validate")
-	public String validate(@RequestParam("email") String email, @RequestParam("password") String password, HttpSession session) {
+	public String validate(@RequestParam("email") String email, @RequestParam("password") String password, HttpSession session, Model model) {
 		
 		if(service.validateUser(email,password) == true) {
 			String role = service.getRole(email);
@@ -45,9 +46,17 @@ public class UsersController {
 			session.setAttribute("email", email);
 			
 			if(role.equals("admin")) {
+				Users user = service.getUser(email);
+				String username = user.getUsername();
+				model.addAttribute("username", username);
 				return "adminHome";
 			}
 			else {
+				Users user = service.getUser(email);
+				boolean userStatus = user.isPremium();
+				String username = user.getUsername();
+				model.addAttribute("isPremium", userStatus);
+				model.addAttribute("username", username);
 				return "customerHome";
 			}
 		}
@@ -60,7 +69,9 @@ public class UsersController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "login";
+		return "index";
 	}
+	
+	
 	
 }
